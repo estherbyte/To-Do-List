@@ -21,7 +21,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "montserrat", sans-serif;
-  width: auto;
 }
 
 input:not([type="radio"]):not([type="checkbox"]),
@@ -189,15 +188,16 @@ input:checked ~ .bubble::after {
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
+  gap: 5px;
 }
 
 .todo-item label {
   display: block;
-  margin-right: 1rem;
+ 
   cursor: pointer;
 }
 
-.todo-item .todo-content {
+.todo-content {
   flex: 1 1 0%;
 }
 
@@ -230,27 +230,44 @@ input:checked ~ .bubble::after {
 
 .todo-item .actions .delete {
   background-color: var(--danger);
-  margin-left: 10px;
+  margin-left: 3px;
 }
 
-.todo-item.done .todo-content input {
+.todo-item.done .todo-content textarea {
   text-decoration: line-through;
   color: var(--grey);
 }
 
-@media (width <= 320px) {
-  * {
-    width: 100%;
-  }
+textarea {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+  color: #888;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
-@media (width <= 375px) {
-  * {
+
+
+
+@media (width <= 800px) {
+    .txt {
+    height: 3em;
     width: 100%;
+    font-size: 1.125rem;
   }
 }
+@media (width <= 450px) {
+  .txt {
+    font-size: 14px;
+  }
+}
+/*
 @media (width <= 425px) {
   * {
     width: 100%;
   }
-}
+}*/
